@@ -1,18 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 import exercises from './assets/data/exercises.json';
+import ExerciseListItem from './src/components/ExerciseListItem';
 
 export default function App() {
-  const exercise = exercises[0];
-
   return (
     <View style={styles.container}>
-      <View style={styles.exerciseContainer}>
-        <Text style={styles.exerciseName}>{exercise.name}</Text>
-        <Text style={styles.exerciseSubtitle}>
-          {exercise.muscle.toUpperCase()} | {exercise.equipment.toUpperCase()}
-        </Text>
-      </View>
+      <FlatList
+        data={exercises}
+        contentContainerStyle={{ gap: 5 }}
+        keyExtractor={(item, index) => item.name + index}
+        renderItem={({ item }) => <ExerciseListItem item={item} />}
+      />
 
       <StatusBar style="auto" />
     </View>
@@ -25,18 +24,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'gainsboro',
     justifyContent: 'center',
     padding: 10,
-  },
-  exerciseContainer: {
-    backgroundColor: '#fff',
-    padding: 10,
-    borderRadius: 10,
-    gap: 5,
-  },
-  exerciseName: {
-    fontSize: 20,
-    fontWeight: '500',
-  },
-  exerciseSubtitle: {
-    color: 'dimgray',
+    paddingTop: 70,
   },
 });
