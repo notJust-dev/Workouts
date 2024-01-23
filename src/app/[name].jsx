@@ -77,7 +77,7 @@ export default function ExerciseDetailsScreen() {
         </Text>
       </View>
 
-      <NewSetInput />
+      <NewSetInput exerciseName={exercise.name} />
       <SetsList />
     </ScrollView>
   );

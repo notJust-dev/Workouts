@@ -18,7 +18,7 @@ type Query {
         { name: "access-control-request-headers", value: "*" }
         {
           name: "api-key"
-          value: "jaPQm9h3wnS64ven64ukmrzs3PKHupKxFGTtxSbfT8oDzCMFTgnvix75nsDGir8S"
+          value: "8HRrSjxvsScn3TgmTkmoGxIwvbczFvVTF0YIq3DlM1Q1KPEI5y4DhI3SzBkVYV9Z"
         }
       ]
       postbody: """

@@ -2,24 +2,37 @@ type InsertSetResponse {
   insertedId: String
 }
 
-scalar Inputdocument
+input NewSet {
+  exercise: String!
+  reps: Int!
+  weight: Float
+}
 
 type Mutation {
-  myQuery(
-    collection: String
-    dataSource: String
-    database: String
-    document: Inputdocument
+  insertSet(
+    document: NewSet!
+    collection: String!
+    dataSource: String!
+    database: String!
   ): InsertSetResponse
     @rest(
       method: POST
       endpoint: "https://eu-central-1.aws.data.mongodb-api.com/app/data-dthng/endpoint/data/v1/action/insertOne"
       headers: [
         { name: "accept", value: "application/json" }
+        { name: "access-control-request-headers", value: "*" }
         {
           name: "apikey"
-          value: "jaPQm9h3wnS64ven64ukmrzs3PKHupKxFGTtxSbfT8oDzCMFTgnvix75nsDGir8S"
+          value: "8HRrSjxvsScn3TgmTkmoGxIwvbczFvVTF0YIq3DlM1Q1KPEI5y4DhI3SzBkVYV9Z"
         }
       ]
+      # postbody: """
+      # {
+      #   "collection": "sets",
+      #   "dataSource": "Cluster1",
+      #   "database": "workouts",
+      #   "document": "{{ .Get "document" }}"
+      # }
+      # """
     )
 }

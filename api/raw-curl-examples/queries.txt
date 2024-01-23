@@ -13,7 +13,7 @@ stepzen import curl --request POST 'https://eu-central-1.aws.data.mongodb-api.co
 }'
 
 
-stepzen import curl "https://eu-central-1.aws.data.mongodb-api.com/app/data-dthng/endpoint/data/v1/action/insertOne" \
+curl "https://eu-central-1.aws.data.mongodb-api.com/app/data-dthng/endpoint/data/v1/action/insertOne" \
   -X POST \
   -H "apiKey: jaPQm9h3wnS64ven64ukmrzs3PKHupKxFGTtxSbfT8oDzCMFTgnvix75nsDGir8S" \
   -H 'Content-Type: application/json' \
@@ -23,7 +23,7 @@ stepzen import curl "https://eu-central-1.aws.data.mongodb-api.com/app/data-dthn
     "database": "workouts",
     "collection": "sets",
     "document": {
-      "exercise": "push",
+      "exercise": "Are you working?",
       "weight": 4,
       "reps": 1
     }
