@@ -1,14 +1,18 @@
 import { Stack } from 'expo-router';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 
+import AuthContextProvider from '../providers/AuthContext';
+
 const client = new QueryClient();
 
 export default function RootLayout() {
   return (
-    <QueryClientProvider client={client}>
-      <Stack>
-        <Stack.Screen name="index" options={{ title: 'Exercises' }} />
-      </Stack>
-    </QueryClientProvider>
+    <AuthContextProvider>
+      <QueryClientProvider client={client}>
+        <Stack>
+          <Stack.Screen name="index" options={{ title: 'Exercises' }} />
+        </Stack>
+      </QueryClientProvider>
+    </AuthContextProvider>
   );
 }
