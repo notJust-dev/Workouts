@@ -1,0 +1,30 @@
+savinvadim1312
+J8qMtDrNcB4zfmfm
+jaPQm9h3wnS64ven64ukmrzs3PKHupKxFGTtxSbfT8oDzCMFTgnvix75nsDGir8S
+
+stepzen import curl --request POST 'https://eu-central-1.aws.data.mongodb-api.com/app/data-dthng/endpoint/data/v1/action/find' \
+--header 'Content-Type: application/json' \
+--header 'Access-Control-Request-Headers: *' \
+--header 'api-key: jaPQm9h3wnS64ven64ukmrzs3PKHupKxFGTtxSbfT8oDzCMFTgnvix75nsDGir8S' \
+--data-raw '{
+    "collection":"sets",
+    "database":"workouts",
+    "dataSource":"Cluster1"
+}'
+
+
+stepzen import curl "https://eu-central-1.aws.data.mongodb-api.com/app/data-dthng/endpoint/data/v1/action/insertOne" \
+  -X POST \
+  -H "apiKey: jaPQm9h3wnS64ven64ukmrzs3PKHupKxFGTtxSbfT8oDzCMFTgnvix75nsDGir8S" \
+  -H 'Content-Type: application/json' \
+  -H "Accept: application/json" \
+  -d '{
+    "dataSource": "Cluster1",
+    "database": "workouts",
+    "collection": "sets",
+    "document": {
+      "exercise": "push",
+      "weight": 4,
+      "reps": 1
+    }
+  }'
