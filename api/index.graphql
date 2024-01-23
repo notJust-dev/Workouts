@@ -2,7 +2,7 @@ schema
   @sdl(
     files: [
       "exercises/index.graphql"
-      "curl/index.graphql"
+      "mongodb/index.graphql"
       "curl-01/index.graphql"
     ]
   ) {
