@@ -82,7 +82,6 @@ export default function ExerciseDetailsScreen() {
               </Text>
             </View>
 
-            <ProgressGraph />
             <NewSetInput exerciseName={exercise.name} />
           </View>
         )}
